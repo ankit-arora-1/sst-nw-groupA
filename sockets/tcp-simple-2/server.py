@@ -16,6 +16,8 @@ print(f"Got connection from client: {addr}")
 
 while True:
     data = conn.recv(1024)
+    if not data:
+        break
     print(f"Data from client = {data.decode()}")
 
 conn.close()
